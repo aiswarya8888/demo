@@ -1,0 +1,10 @@
+git init => create a new repo (it create a .git folder for track changes)
+git add  . => tell to git track the file
+git commit -m 'message'
+git push
+git pull
+
+git remote add origin url
+git config user.name "name" --global
+git config user.email "email" --global
+git clone url
