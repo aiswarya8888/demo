@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    .product{
+        border: 1px solid blue;
+        box-shadow: 1px 1px 5px rgba(0, 0, 255, 0.5);
+border-radius: 8px;
+overflow: hidden;
+    }
+
+    .product img{
+        width: 200px;
+        height: 200px;
+        object-fit: contain;
+        border-bottom: 1px solid black;
+    }
+.product div{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.product button{
+    align-self: flex-end;
+}
+
+</style>
+
+</head>
+<body>
+    
+<div style="display: flex;flex-direction: row;flex-wrap: wrap;">
+<%for (let i=0;i<data.length;i++){%>
+
+<div class="product">
+    <form action="/buy/<%=data[i].default_price%>" method="post">
+    <img src="<%=data[i].images[0]%>" alt="product img">
+    <div>
+        <h2><%=data[i].name%></h2>
+        <h3><%=data[i].description%></h3>
+        <button type="submit">Buy</button>
+    </div></form>
+</div>
+
+<%}%>
+</div>
+
+
+
+
+</body>
+
+</html>
